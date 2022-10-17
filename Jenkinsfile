@@ -8,34 +8,34 @@ agent any
 stages{
 stage('clone '){
 steps {
-//cleanWs()
+cleanWs()
 
 
-bat "git clone -b soulaymen https://github.com/Zeroxcharisma/CI-CD"
+sh "git clone -b soulaymen https://github.com/Zeroxcharisma/CI-CD"
 }
 
 }
 
  stage('clean install and  package'){
  steps {
- bat "mvn clean -f CI-CD"
- bat "mvn install -f CI-CD"
- bat "mvn package -f CI-CD"
+ sh "mvn clean -f CI-CD"
+ sh "mvn install -f CI-CD"
+ sh "mvn package -f CI-CD"
  }
 
  }
  stage('Test unitaire'){
 
- steps{ bat "mvn test -f CI-CD"
+ steps{ sh "mvn test -f CI-CD"
  }}
  stage('Test statique'){
 
- steps{ bat "mvn sonar:sonar -f CI-CD"
+ steps{ sh "mvn sonar:sonar -f CI-CD"
  }}
  stage('Deploy'){
  steps {
 
- bat "mvn deploy -f CI-CD"
+ sh "mvn deploy -f CI-CD"
 
  }
 
@@ -45,11 +45,11 @@ bat "git clone -b soulaymen https://github.com/Zeroxcharisma/CI-CD"
 
             steps {
 		dir("CI-CD") {
-			bat "docker build -t dev ."
+			sh "docker build -t dev ."
 			
- 	  	    bat "docker tag dev  omarfehrii/timesheet2"
- 			//bat"docker login -u omarfehrii -p 123456789"
- 			bat "docker push  omarfehrii/timesheet2"			
+ 	  	    sh "docker tag dev  omarfehrii/timesheet2"
+ 			//sh"docker login -u omarfehrii -p 123456789"
+ 			sh "docker push  omarfehrii/timesheet2"			
 			
 			
         }
