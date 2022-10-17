@@ -18,9 +18,9 @@ sh "git clone -b soulaymen https://github.com/Zeroxcharisma/CI-CD"
 
  stage('clean install and  package'){
  steps {
- sh "mvn clean -f CI-CD"
- sh "mvn install -f CI-CD"
- sh "mvn package -f CI-CD"
+ sh "mvn clean -f CI-CD/"
+ sh "mvn install -f CI-CD/"
+ sh "mvn package -f CI-CD/"
  }
 
  }
@@ -44,7 +44,7 @@ sh "git clone -b soulaymen https://github.com/Zeroxcharisma/CI-CD"
  stage('Docker') { 
 
             steps {
-		dir("CI-CD") {
+		ls("CI-CD") {
 			sh "docker build -t dev ."
 			
  	  	    sh "docker tag dev  omarfehrii/timesheet2"
