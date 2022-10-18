@@ -44,6 +44,19 @@ pipeline {
                 echo 'hello world'
             }
         }
+        
+        
+        stage('MAIL'){
+ 
+ steps {
+
+ mail bcc: '', body: '''Hello from IMEN,
+ Devops Pipeline with success.
+
+ Cordialement''', cc: '', from: '', replyTo: '', subject: 'Devops Timesheet', to: 'imen.mansouri@esprit.tn'
+    
+ }}
+        
     stage ('nexus deploy') {
         steps {
             sh'mvn deploy '
