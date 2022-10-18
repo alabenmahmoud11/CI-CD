@@ -44,8 +44,8 @@ pipeline {
                 echo 'hello world'
             }
         }
-    stage('nexus deploy') {
-        steps{
+    stage ('nexus deploy') {
+        steps {
             sh'mvn deploy '
             
         }
