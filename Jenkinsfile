@@ -59,7 +59,7 @@ pipeline {
       
     stage ('nexus deploy') {
         steps {
-          echo 'mvn deploy '
+          sh 'mvn deploy '
             
         }
 }
