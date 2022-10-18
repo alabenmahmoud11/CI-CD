@@ -38,7 +38,7 @@ pipeline {
         
           
         }
-    }
+    
         stage ('testing') {
             steps {
                 echo 'hello world'
