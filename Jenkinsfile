@@ -5,11 +5,16 @@ pipeline {
         stage ('Git') {
             steps {
                 echo 'pulling...';
-                git branch:'kaouther'
+                git branch :'kaouther' ,
            
                 url : 'https://github.com/Zeroxcharisma/CI-CD.git'
             }
         }
+        
+         
+        
+        
+        
         
          stage ('Testing Maven') {
             steps {
