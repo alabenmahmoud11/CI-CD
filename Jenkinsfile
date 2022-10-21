@@ -4,11 +4,21 @@ pipeline {
     stages {
         stage ('Git') {
             steps {
-                
-                //git 'https://github.com/mhassini/timesheet-devops.git'
-                git 'https://github.com/Zeroxcharisma/CI-CD.git'
+                echo 'pulling...';
+                git branch:'kaouther'
+           
+                url : 'https://github.com/Zeroxcharisma/CI-CD.git'
             }
         }
+        
+         stage ('Testing Maven') {
+            steps {
+
+                sh """mvn -version"""
+            }
+        }
+        
+        
         stage ('Maven Clean') {
             steps {
 //                sh 'cd achat'
@@ -23,10 +33,10 @@ pipeline {
         }
 
         
-      stage('Scan') {
+      stage('Maven SONARQUBE') {
             steps {
                withSonarQubeEnv (installationName: 'jenkinssonar') {
- sh './mvnw clean org.sonarsource.scanner.maven: sonar-maven-plugin:3.9.0.2155:sonar'
+   sh "mvn deploy"
             }
           
         }
