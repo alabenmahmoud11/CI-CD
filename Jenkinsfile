@@ -41,7 +41,7 @@ pipeline {
       stage('Maven SONARQUBE') {
             steps {
                withSonarQubeEnv (installationName: 'jenkinssonar') {
-   sh "mvn deploy"
+   sh "mvn clean package sonar:sonar"
             }
           
         }
