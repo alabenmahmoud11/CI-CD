@@ -26,7 +26,7 @@ pipeline {
         stage ('Sonar') {
             steps {
                
- sh 'mvn sonar:sonar -Dsonar.projectKey=keyspring -Dsonar.host.url=http://192.168.162.222:9000  -Dsonar.login=64ca48605093d2e1b3ca9abcca1a57ec6816ec28'
+ sh 'mvn sonar:sonar -Dsonar.projectKey=keyspring -Dsonar.host.url=http://192.168.1.36:9000  -Dsonar.login=64ca48605093d2e1b3ca9abcca1a57ec6816ec28'
             }
           
         }
