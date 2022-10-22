@@ -1,4 +1,4 @@
-FROM maven:3-alpine
+FROM jenkins-pipeline:3-alpine
 
 COPY pom.xml pipeline/
 
