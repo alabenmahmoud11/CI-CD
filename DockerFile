@@ -1,4 +1,4 @@
 FROM imagenarium/jdk-maven:17
 EXPOSE 8082
-ADD target/devops-integration.jar devops-integration.jar
+ADD https://github.com/Zeroxcharisma/CI-CD/tree/soulaymen/src/main
 ENTRYPOINT ["java","-jar","/devops-integration.jar"]
