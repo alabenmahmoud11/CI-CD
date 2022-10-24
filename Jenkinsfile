@@ -52,12 +52,11 @@ pipeline {
 
  mail bcc: '', body: '''Hello from IMEN,
  Devops Pipeline with success.
-
  Cordialement''', cc: '', from: '', replyTo: '', subject: 'Devops Timesheet', to: 'imen.mansouri@esprit.tn'
     
  }}
       
-   stage("6th Stage : Publish to Nexus Repository Manager") {
+stage("6th Stage : Publish to Nexus Repository Manager") {
             steps {
                 script {
                     pom = readMavenPom file: "pom.xml";
@@ -94,4 +93,5 @@ pipeline {
         }
 }
 }
-}
+Footer
+
