@@ -93,5 +93,4 @@ stage("6th Stage : Publish to Nexus Repository Manager") {
         }
 }
 }
-Footer
 
