@@ -109,6 +109,7 @@
 			
 			
 		</plugins>
+		<finalName>achat-1.0-kch</finalName>
 	</build>
 
 </project>
