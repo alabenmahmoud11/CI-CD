@@ -20,7 +20,7 @@ services:
     networks:
       - devops 
     environment:
-        SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/achatdb?allowPublicKeyRetrieval=true&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?allowPublicKeyRetrieval=true&useSSL=false
     restart: on-failure 
     
     
