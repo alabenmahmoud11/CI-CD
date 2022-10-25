@@ -8,8 +8,8 @@ services:
     ports:
       - 3306:3306
 
-  spring:
-    image: spring
+  spring-boot:
+    image: dqntero/spring
     container_name: back
     ports:
       - 8089:8089
