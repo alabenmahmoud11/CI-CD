@@ -20,7 +20,11 @@ services:
       - database
     networks:
       - devops 
-    restart: on-failure     
+    environment:
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/achatdb?allowPublicKeyRetrieval=true&useSSL=false
+    restart: on-failure 
+    
+    
   angular:
     image: kaoutherch/front
     container_name: front
