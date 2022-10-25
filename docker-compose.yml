@@ -1,32 +1,28 @@
-version: '3'
+version: "3"
+
 services:
-  database:
+  mysqldb:
     image: mysql
-    container_name: database
+    container_name: mysqldb
     restart: unless-stopped
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=1
       - MYSQL_DATABASE=achatdb
-      - MYSQL_USER=soulaymen
-      - MYSQL_PASSWORD=spring  
     ports:
       - 3306:3306
-    networks:
-     - AppNet
-     
-  spring-boot:
+    volumes:
+      - db:/var/lib/mysql
+  app:
+    depends_on:
+      - mysqldb
     image: soulaymendocker123/achat-1.0-sk
-    container_name: back
+    restart: on-failure
     ports:
       - 8089:8089
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/achatdb?allowPublicKeyRetrieval=true&useSSL=false
-    depends_on:
-      - database
-    networks:
-      - AppNet 
-    restart: on-failure     
-  
-networks:
-  AppNet:
-  driver: bridge
+    volumes:
+      - .m2:/root/.m2
+    stdin_open: true
+    tty: true
+
+volumes:
+  db:
