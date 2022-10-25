@@ -7,7 +7,7 @@ services:
       MYSQL_DATABASE: achatdb
       MYSQL_USER: mahdi
       MYSQL_PASSWORD: spring
-      MYSQL_ROOT_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: 
     ports:
       - 3306:3306
     volumes:
@@ -22,8 +22,6 @@ services:
       - 8089:8089
     depends_on:
       - database
-    links:
-      - database:spring-boot
     networks:
       - mynet
     restart: on-failure
