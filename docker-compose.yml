@@ -4,12 +4,12 @@ services:
     container_name: mysql
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
-      MYSQL_DATABASE: tpachato
+      MYSQL_DATABASE: db
     ports:
       - 3306:3306
 
   spring-boot:
-    image: mannai3/spring
+    image: devops/spring
     container_name: springcontainer
     ports:
       - 8089:8089
