@@ -12,8 +12,7 @@ services:
      - devops
      
   spring-boot:
-    image: kaoutherch/achatapp:2.0
-    container_name: spring
+    image: kaoutherch/achatapp
     ports:
       - 8089:8089
     depends_on:
@@ -25,15 +24,6 @@ services:
     restart: on-failure 
     
     
-  angular:
-    image: kaoutherch/front
-    container_name: front
-    ports: 
-      - 80:80
-    depends_on:
-      - spring-boot
-    networks:
-      - devops
   
 networks:
   devops:
