@@ -4,32 +4,32 @@ services:
     image: mysql
     container_name: mysql
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
       MYSQL_DATABASE: achat
     ports:
       - 3306:3306
-      volumes:
-      - .m2:/root/.m2
-    stdin_open: true
-    tty: true
     networks:
      - devops
      
   spring-boot:
-    image: imenma/achat:1.0
+    image: imenmansouri/achatapp:2.0
     container_name: spring
     ports:
       - 8089:8089
     depends_on:
       - database
+    networks:
+      - devops 
     restart: on-failure     
   angular:
-    image: imenma/front
+    image: imenmansouri/front
     container_name: front
     ports: 
       - 80:80
     depends_on:
       - spring-boot
-
+    networks:
+      - devops
   
-
+networks:
+  devops:
