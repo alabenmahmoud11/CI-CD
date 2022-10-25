@@ -16,11 +16,11 @@ services:
     ports:
       - 8089:8089
     depends_on:
-      - mysql
+      - database
     networks:
       - devops 
     environment:
-        SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/achatdb?allowPublicKeyRetrieval=true&useSSL=false
+        SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/achatdb?allowPublicKeyRetrieval=true&useSSL=false
     restart: on-failure 
     
     
