@@ -4,8 +4,8 @@ services:
     image: mysql
     container_name: database
     environment:
-      MYSQL_PASSWORD: root
       MYSQL_DATABASE: achatdb
+      MYSQL_ROOT_PASSWORD: root
     ports:
       - 3306:3306
     volumes:
