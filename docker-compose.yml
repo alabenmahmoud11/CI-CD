@@ -8,6 +8,8 @@ services:
       MYSQL_DATABASE: achatdb
     ports:
       - 3306:3306
+    volumes:
+      - data:/var/lib/mysql
 
   spring-boot:
     image: dqntero/spring
@@ -17,3 +19,5 @@ services:
     depends_on:
       - database
     restart: on-failure
+volumes:
+  data:
