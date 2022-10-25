@@ -1,10 +1,10 @@
-version: "3"
+version: '3'
 services:
   database:
     image: mysql
     container_name: database
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
       MYSQL_DATABASE: achatdb
     ports:
       - 3306:3306
