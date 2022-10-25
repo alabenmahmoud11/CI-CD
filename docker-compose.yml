@@ -5,7 +5,8 @@ services:
     container_name: database
     environment:
       MYSQL_DATABASE: achatdb
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_USER: mahdi
+      MYSQL_PASSWORD: spring
     ports:
       - 3306:3306
     volumes:
