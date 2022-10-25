@@ -10,7 +10,7 @@ services:
 
   spring-boot:
     image: devops/spring
-    container_name: springcontainer
+    container_name: back
     ports:
       - 8089:8089
     depends_on:
