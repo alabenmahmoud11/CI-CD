@@ -9,6 +9,7 @@ services:
       - MYSQL_DATABASE=achatdb
       - MYSQL_USER=mahdi
       - MYSQL_PASSWORD=spring
+      - MYSQL_ROOT_PASSWORD=ROOT
     ports:
       - 3306:3306
     volumes:
