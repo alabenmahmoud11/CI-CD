@@ -1,7 +1,7 @@
 services:
-  mysqldb:
+  database:
     image: mysql
-    container_name: mysqldb
+    container_name: database
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
       MYSQL_DATABASE: achatdb
