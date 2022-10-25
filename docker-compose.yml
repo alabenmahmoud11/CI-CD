@@ -22,7 +22,7 @@ services:
       - devops 
     restart: on-failure     
   angular:
-    image: imenmansouri/front
+    image: imenmansouri/jenkins-pipeline
     container_name: front
     ports: 
       - 80:80
